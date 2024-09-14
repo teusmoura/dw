@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferramentas JavaScript</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>JavaScript</h1>
+        <h1 id="titulo-js">JavaScript</h1>
         <nav>
             <a href="index.html">Início</a>
         </nav>
@@ -18,10 +19,20 @@
             <h2>Principais Ferramentas e Recursos</h2>
             <ul>
                 <li><strong>Manipulação de DOM:</strong>
-                    <p>Permite acessar e manipular elementos HTML.</p>
-                    <pre><code>&lt;script&gt;
-document.getElementById('meuElemento').innerHTML = 'Novo Conteúdo';
-&lt;/script&gt;</code></pre>
+                    <p>Este exemplo altera dinamicamente o conteúdo do título desta página.</p>
+                </li>
+                <li><strong>Mudança de Cor de Fundo:</strong>
+                    <p><button onclick="mudarCorFundo()">Mudar Cor de Fundo</button></p>
+                </li>
+                <li><strong>Exibir Mensagem:</strong>
+                    <p><button onclick="exibirMensagem()">Exibir Mensagem</button></p>
+                </li>
+                <li><strong>Validação de Formulário:</strong>
+                    <form onsubmit="return validarFormulario()">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome">
+                        <button type="submit">Enviar</button>
+                    </form>
                 </li>
                 <!-- Adicionar outras ferramentas de JavaScript com exemplos detalhados -->
             </ul>
