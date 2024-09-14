@@ -1,0 +1,93 @@
+Estrutura do Documento
+    <html>: Define a raiz de um documento HTML.
+    <head>: Contém metadados, como <title>, <meta>, <link>.
+    <title>: Define o título do documento.
+    <meta>: Fornece metadados como descrição e codificação de caracteres.
+    <link>: Vincula folhas de estilo ou outros recursos externos.
+    <body>: Contém o conteúdo visível da página.
+
+Conteúdo de Texto e Formatação
+    <h1> a <h6>: Cabeçalhos, do mais importante (<h1>) ao menos importante (<h6>).
+    <p>: Define um parágrafo.
+    <br>: Insere uma quebra de linha.
+    <hr>: Insere uma linha horizontal.
+    <blockquote>: Define uma citação em bloco.
+    <pre>: Exibe texto com formatação preservada.
+    <strong>: Indica texto importante (negrito).
+    <em>: Indica texto enfatizado (itálico).
+    <b>: Negrito.
+    <i>: Itálico.
+    <u>: Sublinhado.
+    <mark>: Destaca o texto.
+    <small>: Texto menor.
+    <sup>: Texto sobrescrito.
+    <sub>: Texto subscrito.
+    <del>: Texto excluído (riscado).
+    <ins>: Texto inserido (sublinhado).
+
+Listas
+    <ul>: Lista não ordenada (com marcadores).
+    <ol>: Lista ordenada (numerada).
+    <li>: Item de lista.
+    <dl>: Lista de definição.
+    <dt>: Termo em uma lista de definição.
+    <dd>: Descrição de um termo em uma lista de definição.
+
+Links e Mídia
+    <a>: Define um hiperlink.
+    <img>: Insere uma imagem.
+    <figure>: Agrupa conteúdo de mídia com uma legenda.
+    <figcaption>: Legenda para um <figure>.
+    <video>: Insere um vídeo.
+    <audio>: Insere um áudio.
+    <source>: Define fontes alternativas para <video> e <audio>.
+    <track>: Define faixas de texto, como legendas para <video> e <audio>.
+
+Formulários
+    <form>: Define um formulário.
+    <input>: Campo de entrada.
+    <textarea>: Área de texto multilinha.
+    <button>: Botão clicável.
+    <select>: Lista suspensa.
+    <option>: Opção em uma lista suspensa.
+    <label>: Rotula um campo de formulário.
+    <fieldset>: Agrupa elementos de um formulário.
+    <legend>: Legenda para o <fieldset>.
+    <datalist>: Lista de opções predefinidas para um campo <input>.
+    <optgroup>: Agrupa opções em uma lista suspensa.
+
+Tabelas
+    <table>: Define uma tabela.
+    <caption>: Legenda da tabela.
+    <thead>: Cabeçalho da tabela.
+    <tbody>: Corpo da tabela.
+    <tfoot>: Rodapé da tabela.
+    <tr>: Linha da tabela.
+    <th>: Célula de cabeçalho.
+    <td>: Célula de dados.
+    <colgroup>: Grupo de colunas.
+    <col>: Define propriedades para colunas.
+
+Estrutura e Agrupamento de Conteúdo
+    <div>: Contêiner genérico para agrupamento de conteúdo.
+    <span>: Contêiner em linha para agrupamento de conteúdo.
+    <header>: Cabeçalho de uma seção ou página.
+    <footer>: Rodapé de uma seção ou página.
+    <section>: Seção genérica de um documento.
+    <article>: Conteúdo independente e autocontido.
+    <aside>: Conteúdo relacionado, mas independente do conteúdo principal.
+    <nav>: Links de navegação.
+    <main>: Conteúdo principal do documento.
+
+Semântica e Outros
+    <details>: Seção de detalhes que pode ser expandida ou recolhida.
+    <summary>: Título visível para o elemento <details>.
+    <time>: Define uma hora ou data.
+    <template>: Modelo reutilizável que pode ser instanciado.
+    <canvas>: Área de desenho para gráficos dinâmicos.
+
+Programação e Scripts
+
+    <style>: Define estilos CSS dentro do documento.
+    <script>: Inclui ou referencia um script JavaScript.
+    <noscript>: Conteúdo alternativo para navegadores que não suportam scripts.
