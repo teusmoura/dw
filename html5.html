@@ -3,32 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferramentas HTML5</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Comparação de Tags HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2 {
+            color: #000;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        section, article {
+            margin-bottom: 20px;
+        }
+        pre {
+            background: #f0f0f0;
+            padding: 10px;
+            border-left: 3px solid #0073e6;
+            overflow-x: auto;
+            border-radius: 4px;
+        }
+        code {
+            font-family: Consolas, "Courier New", monospace;
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .result {
+            background: #e9f5e9;
+            border-left: 3px solid #4caf50;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>HTML5</h1>
-        <nav>
-            <a href="index.html">Início</a>
-        </nav>
-    </header>
-    <main>
+    <div class="container">
+        <h1>Comparação de Tags HTML</h1>
+
         <section>
-            <h2>Principais Ferramentas e Recursos</h2>
-            <ul>
-                <li><strong>Semântica:</strong>
-                    <p>Tags como <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code> melhoram a estrutura e a acessibilidade.</p>
-                    <pre><code>&lt;header&gt;
-    &lt;h1&gt;Título do Site&lt;/h1&gt;
-&lt;/header&gt;</code></pre>
-                </li>
-                <!-- Adicionar outras ferramentas de HTML5 com exemplos detalhados -->
-            </ul>
+            <h2>1. Estrutura e Seção de Conteúdo</h2>
+            <article>
+                <h3>&lt;div&gt; (Divisão)</h3>
+                <p>Um contêiner genérico usado para agrupar elementos sem significado semântico.</p>
+                <pre><code>&lt;div&gt;Conteúdo da div&lt;/div&gt;</code></pre>
+                <div class="result">Conteúdo da div</div>
+            </article>
+            <article>
+                <h3>&lt;section&gt; (Seção)</h3>
+                <p>Agrupa conteúdo tematicamente relacionado dentro de uma página.</p>
+                <pre><code>&lt;section&gt;&lt;h2&gt;Título da Seção&lt;/h2&gt;&lt;p&gt;Conteúdo da seção.&lt;/p&gt;&lt;/section&gt;</code></pre>
+                <div class="result">
+                    <h2>Título da Seção</h2>
+                    <p>Conteúdo da seção.</p>
+                </div>
+            </article>
+            <article>
+                <h3>&lt;article&gt; (Artigo)</h3>
+                <p>Representa conteúdo independente, como uma notícia ou post de blog.</p>
+                <pre><code>&lt;article&gt;&lt;h2&gt;Título do Artigo&lt;/h2&gt;&lt;p&gt;Conteúdo do artigo.&lt;/p&gt;&lt;/article&gt;</code></pre>
+                <div class="result">
+                    <h2>Título do Artigo</h2>
+                    <p>Conteúdo do artigo.</p>
+                </div>
+            </article>
+            <article>
+                <h3>&lt;span&gt; (Span)</h3>
+                <p>Usado para estilizar uma parte específica do texto inline.</p>
+                <pre><code>&lt;span style="color:red;"&gt;Texto em vermelho&lt;/span&gt;</code></pre>
+                <div class="result"><span style="color:red;">Texto em vermelho</span></div>
+            </article>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Ferramentas HTML5</p>
-    </footer>
+
+        <section>
+            <h2>2. Interatividade e Navegação</h2>
+            <article>
+                <h3>&lt;a&gt; (Anchor)</h3>
+                <p>Cria links para navegação entre páginas ou dentro da mesma página.</p>
+                <pre><code>&lt;a href="https://www.example.com"&gt;Visitar Exemplo&lt;/a&gt;</code></pre>
+                <div class="result"><a href="https://www.example.com" target="_blank">Visitar Exemplo</a></div>
+            </article>
+            <article>
+                <h3>&lt;button&gt; (Botão)</h3>
+                <p>Executa ações quando clicado, como disparar scripts ou enviar formulários.</p>
+                <pre><code>&lt;button&gt;Clique Aqui&lt;/button&gt;</code></pre>
+                <div class="result"><button>Clique Aqui</button></div>
+            </article>
+        </section>
+
+        <section>
+            <h2>3. Estilização e Ênfase de Texto</h2>
+            <article>
+                <h3>&lt;i&gt; (Itálico)</h3>
+                <p>Aplica estilo em itálico ao texto sem adicionar significado semântico.</p>
+                <pre><code>&lt;i&gt;Texto em itálico&lt;/i&gt;</code></pre>
+                <div class="result"><i>Texto em itálico</i></div>
+            </article>
+            <article>
+                <h3>&lt;em&gt; (Ênfase)</h3>
+                <p>Aplica ênfase ao texto, indicando importância semântica.</p>
+                <pre><code>&lt;em&gt;Texto em ênfase&lt;/em&gt;</code></pre>
+                <div class="result"><em>Texto em ênfase</em></div>
+            </article>
+            <article>
+                <h3>&lt;b&gt; (Negrito)</h3>
+                <p>Aplica estilo de negrito ao texto sem adicionar significado semântico.</p>
+                <pre><code>&lt;b&gt;Texto em negrito&lt;/b&gt;</code></pre>
+                <div class="result"><b>Texto em negrito</b></div>
+            </article>
+            <article>
+                <h3>&lt;strong&gt; (Importância)</h3>
+                <p>Indica que o texto é de grande importância, geralmente renderizado em negrito.</p>
+                <pre><code>&lt;strong&gt;Texto importante&lt;/strong&gt;</code></pre>
+                <div class="result"><strong>Texto importante</strong></div>
+            </article>
+        </section>
+
+        <section>
+            <h2>4. Listas de Itens</h2>
+            <article>
+                <h3>&lt;ul&gt; (Lista Não Ordenada)</h3>
+                <p>Cria listas de itens sem ordem específica.</p>
+                <pre><code>&lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ul&gt;</code></pre>
+                <div class="result">
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h3>&lt;ol&gt; (Lista Ordenada)</h3>
+                <p>Cria listas de itens com ordem específica.</p>
+                <pre><code>&lt;ol&gt;&lt;li&gt;Primeiro passo&lt;/li&gt;&lt;li&gt;Segundo passo&lt;/li&gt;&lt;li&gt;Terceiro passo&lt;/li&gt;&lt;/ol&gt;</code></pre>
+                <div class="result">
+                    <ol>
+                        <li>Primeiro passo</li>
+                        <li>Segundo passo</li>
+                        <li>Terceiro passo</li>
+                    </ol>
+                </div>
+            </article>
+        </section>
+
+        <section>
+            <h2>5. Tabelas</h2>
+            <article>
+                <h3>&lt;table&gt; (Tabela)</h3>
+                <p>Define uma tabela de dados.</p>
+                <pre><code>&lt;table border="1"&gt;&lt;tr&gt;&lt;th&gt;Nome&lt;/th&gt;&lt;th&gt;Idade&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;João&lt;/td&gt;&lt;td&gt;25&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Maria&lt;/td&gt;&lt;td&gt;30&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre>
+                <div class="result">
+                    <table border="1">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Idade</th>
+                        </tr>
+                        <tr>
+                            <td>João</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>Maria</td>
+                            <td>30</td>
+                        </tr>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </div>
 </body>
 </html>
