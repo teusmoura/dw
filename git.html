@@ -3,29 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comandos Git</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Introdução ao Git e GitHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        code, pre {
+            background-color: #eee;
+            padding: 5px;
+            border-radius: 4px;
+            display: block;
+        }
+        .example {
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+            padding: 15px;
+            font-style: italic;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8em;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Git</h1>
-        <nav>
-            <a href="index.html">Início</a>
-        </nav>
+        <h1>Guia Básico de Git e GitHub</h1>
     </header>
-    <main>
-        <section>
-            <h2>Principais Comandos e Recursos</h2>
-            <ul>
-                <li><strong>Inicialização:</strong>
-                    <p><code>git init</code> - Inicializa um novo repositório Git no diretório atual.</p>
-                </li>
-                <!-- Adicionar outros comandos do Git com explicações detalhadas -->
-            </ul>
-        </section>
-    </main>
+    <div class="container">
+        <h2>O que é Git?</h2>
+        <p>
+            Git é um sistema de controle de versão distribuído que permite que desenvolvedores trabalhem simultaneamente no mesmo projeto. Ele rastreia as alterações no código-fonte, facilitando o gerenciamento e a colaboração.
+        </p>
+
+        <h3>Comandos Essenciais do Git</h3>
+        
+        <h4>1. Inicializar um repositório</h4>
+        <p>
+            Crie um novo repositório Git em seu diretório de projeto:
+        </p>
+        <pre><code>git init</code></pre>
+        
+        <h4>2. Clonar um repositório</h4>
+        <p>
+            Faça o download de um repositório remoto para seu computador local:
+        </p>
+        <pre><code>git clone &lt;url-do-repositorio&gt;</code></pre>
+
+        <h4>3. Verificar o status</h4>
+        <p>
+            Veja quais arquivos foram modificados e quais estão prontos para serem commitados:
+        </p>
+        <pre><code>git status</code></pre>
+
+        <h4>4. Adicionar arquivos ao staging</h4>
+        <p>
+            Adicione arquivos para o próximo commit:
+        </p>
+        <pre><code>git add &lt;nome-do-arquivo&gt;</code></pre>
+
+        <h4>5. Commitar alterações</h4>
+        <p>
+            Salve suas alterações com uma mensagem descritiva:
+        </p>
+        <pre><code>git commit -m "Mensagem descritiva do commit"</code></pre>
+
+        <div class="example">
+            <strong>Exemplo:</strong> <br>
+            <code>git commit -m "Adiciona função de login e validação"</code>
+        </div>
+
+        <h4>6. Enviar alterações para o repositório remoto</h4>
+        <p>
+            Envie seus commits para o repositório remoto (no GitHub, por exemplo):
+        </p>
+        <pre><code>git push origin main</code></pre>
+
+        <h2>O que é GitHub?</h2>
+        <p>
+            GitHub é uma plataforma que hospeda repositórios Git na nuvem. Ele facilita a colaboração, o compartilhamento de código e a contribuição para projetos open-source.
+        </p>
+
+        <h3>Trabalhando com GitHub</h3>
+
+        <h4>1. Criar um repositório remoto</h4>
+        <p>
+            No GitHub, clique em "New repository" para criar um novo repositório. Copie a URL fornecida para clonar ou adicionar ao seu repositório local.
+        </p>
+
+        <h4>2. Associar um repositório local a um remoto</h4>
+        <p>
+            Adicione a URL do repositório remoto ao seu projeto local:
+        </p>
+        <pre><code>git remote add origin &lt;url-do-repositorio&gt;</code></pre>
+
+        <h4>3. Fazer um pull das alterações</h4>
+        <p>
+            Baixe alterações do repositório remoto para sua máquina local:
+        </p>
+        <pre><code>git pull origin main</code></pre>
+
+        <h2>Dicas de Boas Práticas</h2>
+        <p>
+            - Use mensagens de commit claras e concisas.<br>
+            - Crie branches para novas funcionalidades ou correções.<br>
+            - Faça commits frequentes e significativos.<br>
+            - Nunca faça "force push" a menos que tenha certeza.
+        </p>
+    </div>
     <footer>
-        <p>&copy; 2024 Comandos Git</p>
+        <p>Desenvolvido por Mateus Moura de Lima</p>
     </footer>
 </body>
 </html>
