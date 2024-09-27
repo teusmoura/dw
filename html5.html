@@ -1,188 +1,327 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparação de Tags HTML</title>
+    <title>Guia Completo de Tags HTML</title>
     <style>
+        /* Estilos Gerais */
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f4f4f4;
+            background-color: #f0f4f8;
             color: #333;
-        }
-        h1, h2 {
-            color: #000;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
+            margin: 0;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        section, article {
+
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Estilo das Seções */
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
             margin-bottom: 20px;
         }
+
+        section h3 {
+            color: #2980b9;
+        }
+
+        section article {
+            margin-bottom: 20px;
+        }
+
+        article h3 {
+            margin-bottom: 10px;
+        }
+
+        article p {
+            margin-bottom: 10px;
+        }
+
+        /* Estilos de Código */
         pre {
-            background: #f0f0f0;
-            padding: 10px;
-            border-left: 3px solid #0073e6;
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #bdc3c7;
             overflow-x: auto;
-            border-radius: 4px;
         }
+
         code {
-            font-family: Consolas, "Courier New", monospace;
-            color: #c7254e;
-            background-color: #f9f2f4;
-            padding: 2px 4px;
+            background-color: #e3f2fd;
+            padding: 4px 8px;
             border-radius: 4px;
+            color: #2c3e50;
         }
-        ul, ol {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
+
         .result {
-            background: #e9f5e9;
-            border-left: 3px solid #4caf50;
-            padding: 10px;
+            background-color: #f7f9fb;
+            padding: 15px;
             margin-top: 10px;
-            border-radius: 4px;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        .result h4 {
+            margin-top: 0;
+        }
+
+        .result p {
+            margin: 0;
+        }
+
+        /* Tabelas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #dcdde1;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Comparação de Tags HTML</h1>
+        <h1>Guia Completo de Tags HTML</h1>
+        <p>Este guia detalhado contém exemplos práticos e explicações para as principais tags HTML. Cada seção apresenta o uso e a visualização das tags.</p>
 
         <section>
-            <h2>1. Estrutura e Seção de Conteúdo</h2>
+            <h2>1. Estrutura e Metadados</h2>
             <article>
-                <h3>&lt;div&gt; (Divisão)</h3>
-                <p>Um contêiner genérico usado para agrupar elementos sem significado semântico.</p>
-                <pre><code>&lt;div&gt;Conteúdo da div&lt;/div&gt;</code></pre>
-                <div class="result">Conteúdo da div</div>
+                <h3>&lt;html&gt; e &lt;head&gt;</h3>
+                <p>Define a estrutura básica do documento HTML e o cabeçalho da página, respectivamente.</p>
+                <pre><code>&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;!-- Metadados, título e links para estilos --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Conteúdo principal do documento --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <div class="result no-result">[Não há resultado visual específico]</div>
             </article>
             <article>
-                <h3>&lt;section&gt; (Seção)</h3>
-                <p>Agrupa conteúdo tematicamente relacionado dentro de uma página.</p>
-                <pre><code>&lt;section&gt;&lt;h2&gt;Título da Seção&lt;/h2&gt;&lt;p&gt;Conteúdo da seção.&lt;/p&gt;&lt;/section&gt;</code></pre>
+                <h3>&lt;meta&gt; e &lt;title&gt;</h3>
+                <p>Define metadados da página e o título exibido na aba do navegador.</p>
+                <pre><code>&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Guia Completo de Tags HTML&lt;/title&gt;</code></pre>
+                <div class="result no-result">[Título exibido na aba do navegador]</div>
+            </article>
+            <article>
+                <h3>&lt;style&gt; e &lt;script&gt;</h3>
+                <p>Define estilos internos e scripts JavaScript, respectivamente.</p>
+                <pre><code>&lt;style&gt;
+    body { font-family: Arial, sans-serif; }
+&lt;/style&gt;
+&lt;script&gt;
+    console.log('Script carregado.');
+&lt;/script&gt;</code></pre>
+                <div class="result no-result">[Estilos e scripts são executados, mas não têm resultado visual direto]</div>
+            </article>
+        </section>
+
+        <section>
+            <h2>2. Estruturação de Conteúdo</h2>
+            <article>
+                <h3>&lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;footer&gt; e &lt;div&gt;</h3>
+                <p>Essas tags ajudam a organizar o conteúdo da página em blocos semânticos.</p>
+                <pre><code>&lt;header&gt;Cabeçalho do site&lt;/header&gt;
+&lt;nav&gt;Navegação principal&lt;/nav&gt;
+&lt;section&gt;Seção de conteúdo&lt;/section&gt;
+&lt;article&gt;Artigo ou post específico&lt;/article&gt;
+&lt;aside&gt;Barra lateral ou conteúdo secundário&lt;/aside&gt;
+&lt;footer&gt;Rodapé da página&lt;/footer&gt;
+&lt;div&gt;Divisão genérica do conteúdo&lt;/div&gt;</code></pre>
                 <div class="result">
-                    <h2>Título da Seção</h2>
-                    <p>Conteúdo da seção.</p>
+                    <header><h4>Cabeçalho do site</h4></header>
+                    <nav>Navegação principal</nav>
+                    <section><h4>Seção de conteúdo</h4></section>
+                    <article><h4>Artigo ou post específico</h4></article>
+                    <aside>Barra lateral ou conteúdo secundário</aside>
+                    <footer><h4>Rodapé da página</h4></footer>
+                    <div>Divisão genérica do conteúdo</div>
+                </div>
+            </article>
+        </section>
+
+        <section>
+            <h2>3. Formatação de Texto</h2>
+            <article>
+                <h3>&lt;p&gt;, &lt;h1&gt; a &lt;h6&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;u&gt;, &lt;br&gt;</h3>
+                <p>Essas tags definem parágrafos, títulos, negrito, itálico, sublinhado e quebras de linha.</p>
+                <pre><code>&lt;p&gt;Este é um parágrafo.&lt;/p&gt;
+&lt;h1&gt;Título de Nível 1&lt;/h1&gt;
+&lt;h2&gt;Título de Nível 2&lt;/h2&gt;
+&lt;strong&gt;Texto em negrito&lt;/strong&gt;
+&lt;em&gt;Texto em itálico&lt;/em&gt;
+&lt;u&gt;Texto sublinhado&lt;/u&gt;
+&lt;br&gt;Quebra de linha</code></pre>
+                <div class="result">
+                    <p>Este é um parágrafo.</p>
+                    <h1>Título de Nível 1</h1>
+                    <h2>Título de Nível 2</h2>
+                    <strong>Texto em negrito</strong><br>
+                    <em>Texto em itálico</em><br>
+                    <u>Texto sublinhado</u><br>
+                    Quebra de linha
                 </div>
             </article>
             <article>
-                <h3>&lt;article&gt; (Artigo)</h3>
-                <p>Representa conteúdo independente, como uma notícia ou post de blog.</p>
-                <pre><code>&lt;article&gt;&lt;h2&gt;Título do Artigo&lt;/h2&gt;&lt;p&gt;Conteúdo do artigo.&lt;/p&gt;&lt;/article&gt;</code></pre>
+                <h3>&lt;blockquote&gt; e &lt;pre&gt;</h3>
+                <p>Estas tags são usadas para citações em bloco e blocos de código pré-formatados.</p>
+                <pre><code>&lt;blockquote&gt;Isto é uma citação.&lt;/blockquote&gt;
+&lt;pre&gt;
+    &lt;code&gt;Código pré-formatado&lt;/code&gt;
+&lt;/pre&gt;</code></pre>
                 <div class="result">
-                    <h2>Título do Artigo</h2>
-                    <p>Conteúdo do artigo.</p>
+                    <blockquote>Isto é uma citação.</blockquote>
+                    <pre><code>Código pré-formatado</code></pre>
                 </div>
             </article>
-            <article>
-                <h3>&lt;span&gt; (Span)</h3>
-                <p>Usado para estilizar uma parte específica do texto inline.</p>
-                <pre><code>&lt;span style="color:red;"&gt;Texto em vermelho&lt;/span&gt;</code></pre>
-                <div class="result"><span style="color:red;">Texto em vermelho</span></div>
-            </article>
         </section>
 
         <section>
-            <h2>2. Interatividade e Navegação</h2>
+            <h2>4. Listas</h2>
             <article>
-                <h3>&lt;a&gt; (Anchor)</h3>
-                <p>Cria links para navegação entre páginas ou dentro da mesma página.</p>
-                <pre><code>&lt;a href="https://www.example.com"&gt;Visitar Exemplo&lt;/a&gt;</code></pre>
-                <div class="result"><a href="https://www.example.com" target="_blank">Visitar Exemplo</a></div>
-            </article>
-            <article>
-                <h3>&lt;button&gt; (Botão)</h3>
-                <p>Executa ações quando clicado, como disparar scripts ou enviar formulários.</p>
-                <pre><code>&lt;button&gt;Clique Aqui&lt;/button&gt;</code></pre>
-                <div class="result"><button>Clique Aqui</button></div>
-            </article>
-        </section>
+                <h3>&lt;ul&gt;, &lt;ol&gt; e &lt;li&gt;</h3>
+                <p>Cria listas não ordenadas (<code>&lt;ul&gt;</code>) e ordenadas (<code>&lt;ol&gt;</code>) com itens de lista (<code>&lt;li&gt;</code>).</p>
+                <pre><code>&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
 
-        <section>
-            <h2>3. Estilização e Ênfase de Texto</h2>
-            <article>
-                <h3>&lt;i&gt; (Itálico)</h3>
-                <p>Aplica estilo em itálico ao texto sem adicionar significado semântico.</p>
-                <pre><code>&lt;i&gt;Texto em itálico&lt;/i&gt;</code></pre>
-                <div class="result"><i>Texto em itálico</i></div>
-            </article>
-            <article>
-                <h3>&lt;em&gt; (Ênfase)</h3>
-                <p>Aplica ênfase ao texto, indicando importância semântica.</p>
-                <pre><code>&lt;em&gt;Texto em ênfase&lt;/em&gt;</code></pre>
-                <div class="result"><em>Texto em ênfase</em></div>
-            </article>
-            <article>
-                <h3>&lt;b&gt; (Negrito)</h3>
-                <p>Aplica estilo de negrito ao texto sem adicionar significado semântico.</p>
-                <pre><code>&lt;b&gt;Texto em negrito&lt;/b&gt;</code></pre>
-                <div class="result"><b>Texto em negrito</b></div>
-            </article>
-            <article>
-                <h3>&lt;strong&gt; (Importância)</h3>
-                <p>Indica que o texto é de grande importância, geralmente renderizado em negrito.</p>
-                <pre><code>&lt;strong&gt;Texto importante&lt;/strong&gt;</code></pre>
-                <div class="result"><strong>Texto importante</strong></div>
-            </article>
-        </section>
-
-        <section>
-            <h2>4. Listas de Itens</h2>
-            <article>
-                <h3>&lt;ul&gt; (Lista Não Ordenada)</h3>
-                <p>Cria listas de itens sem ordem específica.</p>
-                <pre><code>&lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ul&gt;</code></pre>
+&lt;ol&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
                 <div class="result">
                     <ul>
                         <li>Item 1</li>
                         <li>Item 2</li>
                     </ul>
-                </div>
-            </article>
-            <article>
-                <h3>&lt;ol&gt; (Lista Ordenada)</h3>
-                <p>Cria listas de itens com ordem específica.</p>
-                <pre><code>&lt;ol&gt;&lt;li&gt;Primeiro passo&lt;/li&gt;&lt;li&gt;Segundo passo&lt;/li&gt;&lt;li&gt;Terceiro passo&lt;/li&gt;&lt;/ol&gt;</code></pre>
-                <div class="result">
                     <ol>
-                        <li>Primeiro passo</li>
-                        <li>Segundo passo</li>
-                        <li>Terceiro passo</li>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
                     </ol>
                 </div>
             </article>
         </section>
 
         <section>
-            <h2>5. Tabelas</h2>
+            <h2>5. Links e Imagens</h2>
             <article>
-                <h3>&lt;table&gt; (Tabela)</h3>
-                <p>Define uma tabela de dados.</p>
-                <pre><code>&lt;table border="1"&gt;&lt;tr&gt;&lt;th&gt;Nome&lt;/th&gt;&lt;th&gt;Idade&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;João&lt;/td&gt;&lt;td&gt;25&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Maria&lt;/td&gt;&lt;td&gt;30&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre>
+                <h3>&lt;a&gt; e &lt;img&gt;</h3>
+                <p>Cria links e insere imagens.</p>
+                <pre><code>&lt;a href="https://www.example.com"&gt;Visite o site&lt;/a&gt;
+&lt;img src="imagem.jpg" alt="Descrição da imagem"&gt;</code></pre>
                 <div class="result">
-                    <table border="1">
+                    <a href="https://www.example.com" target="_blank">Visite o site</a><br>
+                    <img src="https://via.placeholder.com/150" alt="Imagem Exemplo">
+                </div>
+            </article>
+        </section>
+
+        <section>
+            <h2>6. Tabelas</h2>
+            <article>
+                <h3>&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</h3>
+                <p>Cria tabelas com linhas (<code>&lt;tr&gt;</code>), cabeçalhos (<code>&lt;th&gt;</code>) e células (<code>&lt;td&gt;</code>).</p>
+                <pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Cabeçalho 1&lt;/th&gt;
+        &lt;th&gt;Cabeçalho 2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Celula 1&lt;/td&gt;
+        &lt;td&gt;Celula 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                <div class="result">
+                    <table>
                         <tr>
-                            <th>Nome</th>
-                            <th>Idade</th>
+                            <th>Cabeçalho 1</th>
+                            <th>Cabeçalho 2</th>
                         </tr>
                         <tr>
-                            <td>João</td>
-                            <td>25</td>
-                        </tr>
-                        <tr>
-                            <td>Maria</td>
-                            <td>30</td>
+                            <td>Celula 1</td>
+                            <td>Celula 2</td>
                         </tr>
                     </table>
+                </div>
+            </article>
+        </section>
+
+        <section>
+            <h2>7. Elementos Sem Fechamento</h2>
+            <article>
+                <h3>&lt;br&gt;, &lt;hr&gt;, &lt;img&gt;, &lt;meta&gt;</h3>
+                <p>Essas tags não possuem uma tag de fechamento e são usadas para quebra de linha, linha horizontal, imagens e metadados.</p>
+                <pre><code>&lt;br&gt; <!-- Quebra de linha -->
+&lt;hr&gt; <!-- Linha horizontal -->
+&lt;img src="imagem.jpg" alt="Imagem descritiva"&gt; <!-- Imagem -->
+&lt;meta name="description" content="Descrição da página"&gt; <!-- Metadados --></code></pre>
+                <div class="result no-result">[Exemplo: Quebra de linha e linha horizontal não visíveis aqui]</div>
+            </article>
+        </section>
+
+        <section>
+            <h2>8. Elementos de Código</h2>
+            <article>
+                <h3>&lt;code&gt; e &lt;pre&gt;</h3>
+                <p>Cria blocos de código e texto pré-formatado.</p>
+                <pre><code>&lt;code&gt;document.write('Hello, World!');&lt;/code&gt;
+&lt;pre&gt;
+    function hello() {
+        console.log('Hello, World!');
+    }
+&lt;/pre&gt;</code></pre>
+                <div class="result">
+                    <code>document.write('Hello, World!');</code>
+                    <pre>
+    function hello() {
+        console.log('Hello, World!');
+    }
+                    </pre>
                 </div>
             </article>
         </section>
