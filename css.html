@@ -1,36 +1,368 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferramentas CSS</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Guia de CSS Completo</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Estilo das Seções */
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        section h3 {
+            color: #2980b9;
+        }
+
+        section article {
+            margin-bottom: 20px;
+        }
+
+        article h3 {
+            margin-bottom: 10px;
+        }
+
+        article p {
+            margin-bottom: 10px;
+        }
+
+        /* Estilos de Código */
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #34495e;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+
+        code {
+            color: #1abc9c;
+        }
+
+        /* Estilo para Código dentro de Tabelas */
+        .result {
+            background-color: #f7f9fb;
+            padding: 15px;
+            margin-top: 10px;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        .result h4 {
+            margin-top: 0;
+        }
+
+        .result p {
+            margin: 0;
+        }
+
+        /* Tabelas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #dcdde1;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>CSS</h1>
-        <nav>
-            <a href="index.html">Início</a>
-        </nav>
-    </header>
-    <main>
+    <div class="container">
+        <h1>Guia Completo de CSS</h1>
+        <p>Este guia contém exemplos práticos de como utilizar as principais propriedades e regras CSS. Cada seção aborda um conceito fundamental de estilo para a web.</p>
+
+        <!-- 1. Seletores CSS -->
         <section>
-            <h2>Principais Ferramentas e Recursos</h2>
-            <ul>
-                <li><strong>Flexbox:</strong>
-                    <p>Cria layouts unidimensionais para alinhamento e distribuição de espaço.</p>
-                    <pre><code>.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+            <h2>1. Seletores CSS</h2>
+            <article>
+                <h3>Seletores Básicos</h3>
+                <p>Os seletores são usados para selecionar elementos HTML e aplicar estilos. Os seletores básicos incluem seletores de tipo, classe e ID.</p>
+                <pre><code>/* Seleciona todos os parágrafos */
+p {
+    color: blue;
+}
+
+/* Seleciona o elemento com a classe "header" */
+.header {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Seleciona o elemento com o ID "menu" */
+#menu {
+    font-size: 20px;
 }</code></pre>
-                </li>
-                <!-- Adicionar outras ferramentas de CSS com exemplos detalhados -->
-            </ul>
+                <div class="result">
+                    <p style="color: blue;">Este é um parágrafo com estilo aplicado.</p>
+                    <div class="header" style="background-color: #3498db; color: white;">Cabeçalho com classe .header</div>
+                    <div id="menu" style="font-size: 20px;">Este é um menu com ID #menu</div>
+                </div>
+            </article>
+
+            <article>
+                <h3>Seletores Combinados</h3>
+                <p>Os seletores combinados permitem aplicar estilos a elementos baseados em sua relação com outros elementos no documento.</p>
+                <pre><code>/* Seleciona todos os <em> elementos dentro de um parágrafo */
+p em {
+    color: red;
+}
+
+/* Seleciona os links que são filhos diretos de um div */
+div > a {
+    text-decoration: none;
+}</code></pre>
+                <div class="result">
+                    <p>Parágrafo com <em style="color: red;">ênfase</em>.</p>
+                    <div>
+                        <a href="#">Link dentro do div (filho direto)</a>
+                    </div>
+                </div>
+            </article>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Ferramentas CSS</p>
-    </footer>
+
+        <!-- 2. Propriedades de Texto -->
+        <section>
+            <h2>2. Propriedades de Texto</h2>
+            <article>
+                <h3>Cor e Fonte</h3>
+                <p>Você pode alterar a cor, o tamanho, a família da fonte e o espaçamento entre letras usando CSS.</p>
+                <pre><code>/* Definir cor e fonte */
+h1 {
+    color: #2980b9;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Alterar o espaçamento entre letras */
+p {
+    letter-spacing: 2px;
+    font-size: 18px;
+}</code></pre>
+                <div class="result">
+                    <h1 style="color: #2980b9; font-family: Arial, sans-serif;">Título com cor e fonte personalizada</h1>
+                    <p style="letter-spacing: 2px; font-size: 18px;">Parágrafo com espaçamento entre letras.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- 3. Propriedades de Cor -->
+        <section>
+            <h2>3. Propriedades de Cor</h2>
+            <article>
+                <h3>Definindo Cores</h3>
+                <p>CSS permite definir cores usando nomes de cores, valores hexadecimais, RGB ou HSL.</p>
+                <pre><code>/* Cor usando nome */
+p {
+    color: green;
+}
+
+/* Cor usando hexadecimal */
+div {
+    background-color: #3498db;
+}
+
+/* Cor usando RGB */
+h1 {
+    color: rgb(255, 0, 0);
+}
+
+/* Cor usando HSL */
+button {
+    background-color: hsl(120, 100%, 50%);
+}</code></pre>
+                <div class="result">
+                    <p style="color: green;">Texto verde usando nome de cor</p>
+                    <div style="background-color: #3498db; padding: 10px; color: white;">Fundo azul usando hexadecimal</div>
+                    <h1 style="color: rgb(255, 0, 0);">Texto vermelho usando RGB</h1>
+                    <button style="background-color: hsl(120, 100%, 50%);">Botão com fundo verde usando HSL</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- 4. Layout e Box Model -->
+        <section>
+            <h2>4. Layout e Box Model</h2>
+            <article>
+                <h3>Box Model</h3>
+                <p>O box model em CSS envolve as propriedades de margin, border, padding e o conteúdo do elemento.</p>
+                <pre><code>/* Box model */
+div {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid #3498db;
+    margin: 10px;
+}</code></pre>
+                <div class="result">
+                    <div style="width: 200px; padding: 20px; border: 5px solid #3498db; margin: 10px;">
+                        Elemento com box model aplicado
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <h3>Layouts com Flexbox</h3>
+                <p>Flexbox é um método moderno de criação de layouts flexíveis.</p>
+                <pre><code>/* Flexbox container */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    background-color: #3498db;
+    padding: 20px;
+    color: white;
+}</code></pre>
+                <div class="result">
+                    <div class="container" style="display: flex; justify-content: space-between;">
+                        <div class="item" style="background-color: #3498db; padding: 20px; color: white;">Item 1</div>
+                        <div class="item" style="background-color: #3498db; padding: 20px; color: white;">Item 2</div>
+                        <div class="item" style="background-color: #3498db; padding: 20px; color: white;">Item 3</div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 5. Propriedades de Imagem e Fundo -->
+        <section>
+            <h2>5. Propriedades de Imagem e Fundo</h2>
+            <article>
+                <h3>Imagens e Fundos</h3>
+                <p>Você pode definir imagens como fundo e controlar sua exibição com CSS.</p>
+                <pre><code>/* Definir imagem de fundo */
+div {
+    background-image: url('https://via.placeholder.com/200');
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}</code></pre>
+                <div class="result">
+                    <div style="background-image: url('https://via.placeholder.com/200'); background-size: cover; width: 200px; height: 200px;">
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 6. Propriedades de Posição -->
+        <section>
+            <h2>6. Propriedades de Posição</h2>
+            <article>
+                <h3>Posicionamento Relativo e Absoluto</h3>
+                <p>CSS oferece várias maneiras de posicionar elementos: estático, relativo, absoluto, fixo, e sticky.</p>
+                <pre><code>/* Posicionamento absoluto */
+div {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+
+/* Posicionamento relativo */
+p {
+    position: relative;
+    top: 10px;
+    left: 20px;
+}</code></pre>
+                <div class="result">
+                    <div style="position: absolute; top: 50px; left: 100px; background-color: #3498db; color: white; padding: 10px;">Posicionado Absoluto</div>
+                    <p style="position: relative; top: 10px; left: 20px;">Posicionado Relativo</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- 7. Transições e Animações -->
+        <section>
+            <h2>7. Transições e Animações</h2>
+            <article>
+                <h3>Transições</h3>
+                <p>Transições em CSS permitem animar mudanças de estilo de forma suave.</p>
+                <pre><code>/* Transição de cor */
+button {
+    background-color: #3498db;
+    transition: background-color 0.5s ease;
+}
+
+button:hover {
+    background-color: #2ecc71;
+}</code></pre>
+                <div class="result">
+                    <button style="background-color: #3498db; transition: background-color 0.5s ease;">Passe o mouse aqui</button>
+                </div>
+            </article>
+
+            <article>
+                <h3>Animações</h3>
+                <p>As animações em CSS permitem criar sequências mais complexas de transformações visuais.</p>
+                <pre><code>/* Animação de rotação */
+@keyframes rotacao {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+div {
+    animation: rotacao 2s infinite linear;
+}</code></pre>
+                <div class="result">
+                    <div style="animation: rotacao 2s infinite linear; width: 100px; height: 100px; background-color: #3498db;"></div>
+                </div>
+            </article>
+        </section>
+    </div>
 </body>
 </html>
