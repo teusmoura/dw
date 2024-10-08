@@ -125,6 +125,7 @@
         <h1>Guia de Tags HTML</h1>
         <p>Este guia detalhado contém exemplos práticos e explicações para as principais tags HTML. Cada seção apresenta o uso e a visualização das tags.</p>
 
+        <!-- 1. Estrutura e Metadados -->
         <section>
             <h2>1. Estrutura e Metadados</h2>
             <article>
@@ -160,6 +161,7 @@
             </article>
         </section>
 
+        <!-- 2. Estruturação de Conteúdo -->
         <section>
             <h2>2. Estruturação de Conteúdo</h2>
             <article>
@@ -184,6 +186,7 @@
             </article>
         </section>
 
+        <!-- 3. Formatação de Texto -->
         <section>
             <h2>3. Formatação de Texto</h2>
             <article>
@@ -220,49 +223,114 @@
             </article>
         </section>
 
+        <!-- 4. Formulários -->
         <section>
-            <h2>4. Listas</h2>
+            <h2>4. Formulários</h2>
             <article>
-                <h3>&lt;ul&gt;, &lt;ol&gt; e &lt;li&gt;</h3>
-                <p>Cria listas não ordenadas (<code>&lt;ul&gt;</code>) e ordenadas (<code>&lt;ol&gt;</code>) com itens de lista (<code>&lt;li&gt;</code>).</p>
-                <pre><code>&lt;ul&gt;
-    &lt;li&gt;Item 1&lt;/li&gt;
-    &lt;li&gt;Item 2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;Item 1&lt;/li&gt;
-    &lt;li&gt;Item 2&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
+                <h3>&lt;form&gt;, &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;, &lt;option&gt;, &lt;button&gt;, &lt;label&gt;</h3>
+                <p>Essas tags são usadas para a criação de formulários interativos e envio de dados.</p>
+                <pre><code>&lt;form action="/submit" method="POST"&gt;
+    &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome"&gt;
+    &lt;br&gt;
+    &lt;label for="mensagem"&gt;Mensagem:&lt;/label&gt;
+    &lt;textarea id="mensagem" name="mensagem"&gt;&lt;/textarea&gt;
+    &lt;br&gt;
+    &lt;label for="opcao"&gt;Escolha uma opção:&lt;/label&gt;
+    &lt;select id="opcao" name="opcao"&gt;
+        &lt;option value="1"&gt;Opção 1&lt;/option&gt;
+        &lt;option value="2"&gt;Opção 2&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;br&gt;
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
                 <div class="result">
-                    <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                    </ul>
-                    <ol>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                    </ol>
+                    <form action="/submit" method="POST">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome"><br>
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem"></textarea><br>
+                        <label for="opcao">Escolha uma opção:</label>
+                        <select id="opcao" name="opcao">
+                            <option value="1">Opção 1</option>
+                            <option value="2">Opção 2</option>
+                        </select><br>
+                        <button type="submit">Enviar</button>
+                    </form>
                 </div>
             </article>
         </section>
 
+        <!-- 5. Multimídia -->
         <section>
-            <h2>5. Links e Imagens</h2>
+            <h2>5. Multimídia</h2>
             <article>
-                <h3>&lt;a&gt; e &lt;img&gt;</h3>
-                <p>Cria links e insere imagens.</p>
-                <pre><code>&lt;a href="https://www.example.com"&gt;Visite o site&lt;/a&gt;
-&lt;img src="imagem.jpg" alt="Descrição da imagem"&gt;</code></pre>
+                <h3>&lt;audio&gt;, &lt;video&gt;, &lt;source&gt;, &lt;track&gt;</h3>
+                <p>Essas tags são usadas para adicionar áudio e vídeo ao documento HTML.</p>
+                <pre><code>&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    Seu navegador não suporta o elemento de áudio.
+&lt;/audio&gt;
+
+&lt;video controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    Seu navegador não suporta o elemento de vídeo.
+&lt;/video&gt;</code></pre>
                 <div class="result">
-                    <a href="https://www.example.com" target="_blank">Visite o site</a><br>
-                    <img src="https://via.placeholder.com/150" alt="Imagem Exemplo">
+                    <audio controls>
+                        <source src="audio.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio><br>
+                    <video controls>
+                        <source src="video.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
                 </div>
             </article>
         </section>
 
+        <!-- 6. Elementos Interativos e Gráficos -->
         <section>
-            <h2>6. Tabelas</h2>
+            <h2>6. Elementos Interativos e Gráficos</h2>
+            <article>
+                <h3>&lt;details&gt;, &lt;summary&gt;, &lt;dialog&gt;, &lt;canvas&gt;, &lt;svg&gt;</h3>
+                <p>Esses elementos permitem interatividade e gráficos em HTML.</p>
+                <pre><code>&lt;details&gt;
+    &lt;summary&gt;Clique para expandir&lt;/summary&gt;
+    Aqui está o conteúdo expandido.
+&lt;/details&gt;
+
+&lt;canvas id="meuCanvas"&gt;Seu navegador não suporta o elemento canvas.&lt;/canvas&gt;</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>Clique para expandir</summary>
+                        Aqui está o conteúdo expandido.
+                    </details>
+                    <br>
+                    <canvas id="meuCanvas">Seu navegador não suporta o elemento canvas.</canvas>
+                </div>
+            </article>
+        </section>
+
+        <!-- 7. Acessibilidade -->
+        <section>
+            <h2>7. Acessibilidade</h2>
+            <article>
+                <h3>&lt;img&gt; com atributo alt e atributos aria</h3>
+                <p>O atributo <code>alt</code> em imagens e os atributos <code>aria</code> melhoram a acessibilidade para leitores de tela e outros dispositivos de assistência.</p>
+                <pre><code>&lt;img src="imagem.jpg" alt="Descrição da imagem para leitores de tela"&gt;
+
+&lt;button aria-label="Fechar janela"&gt;X&lt;/button&gt;</code></pre>
+                <div class="result">
+                    <img src="https://via.placeholder.com/150" alt="Imagem Exemplo"><br>
+                    <button aria-label="Fechar janela">X</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- 8. Tabelas -->
+        <section>
+            <h2>8. Tabelas</h2>
             <article>
                 <h3>&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</h3>
                 <p>Cria tabelas com linhas (<code>&lt;tr&gt;</code>), cabeçalhos (<code>&lt;th&gt;</code>) e células (<code>&lt;td&gt;</code>).</p>
@@ -291,8 +359,9 @@
             </article>
         </section>
 
+        <!-- 9. Elementos Sem Fechamento -->
         <section>
-            <h2>7. Elementos Sem Fechamento</h2>
+            <h2>9. Elementos Sem Fechamento</h2>
             <article>
                 <h3>&lt;br&gt;, &lt;hr&gt;, &lt;img&gt;, &lt;meta&gt;</h3>
                 <p>Essas tags não possuem uma tag de fechamento e são usadas para quebra de linha, linha horizontal, imagens e metadados.</p>
@@ -304,8 +373,9 @@
             </article>
         </section>
 
+        <!-- 10. Elementos de Código -->
         <section>
-            <h2>8. Elementos de Código</h2>
+            <h2>10. Elementos de Código</h2>
             <article>
                 <h3>&lt;code&gt; e &lt;pre&gt;</h3>
                 <p>Cria blocos de código e texto pré-formatado.</p>
