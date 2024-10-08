@@ -198,6 +198,18 @@
                     Quebra de linha
                 </div>
             </article>
+            <article>
+                <h3>&lt;blockquote&gt; e &lt;pre&gt;</h3>
+                <p>Estas tags são usadas para citações em bloco e blocos de código pré-formatados.</p>
+                <pre><code>&lt;blockquote&gt;Isto é uma citação.&lt;/blockquote&gt;
+&lt;pre&gt;
+    &lt;code&gt;Código pré-formatado&lt;/code&gt;
+&lt;/pre&gt;</code></pre>
+                <div class="result">
+                    <blockquote>Isto é uma citação.</blockquote>
+                    <pre><code>Código pré-formatado</code></pre>
+                </div>
+            </article>
         </section>
 
         <!-- 4. Tipos de Input -->
@@ -272,8 +284,112 @@
             </article>
         </section>
 
-        <!-- Outras seções seguem... -->
-        
+        <!-- 6. Tabelas -->
+        <section>
+            <h2>6. Tabelas</h2>
+            <article>
+                <h3>&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</h3>
+                <p>Cria tabelas com linhas (<code>&lt;tr&gt;</code>), cabeçalhos (<code>&lt;th&gt;</code>) e células (<code>&lt;td&gt;</code>).</p>
+                <pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Cabeçalho 1&lt;/th&gt;
+        &lt;th&gt;Cabeçalho 2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Celula 1&lt;/td&gt;
+        &lt;td&gt;Celula 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                <div class="result">
+                    <table>
+                        <tr>
+                            <th>Cabeçalho 1</th>
+                            <th>Cabeçalho 2</th>
+                        </tr>
+                        <tr>
+                            <td>Celula 1</td>
+                            <td>Celula 2</td>
+                        </tr>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+        <!-- 7. Elementos Interativos e Gráficos -->
+        <section>
+            <h2>7. Elementos Interativos e Gráficos</h2>
+            <article>
+                <h3>&lt;details&gt;, &lt;summary&gt;, &lt;dialog&gt;, &lt;canvas&gt;, &lt;svg&gt;</h3>
+                <p>Esses elementos permitem interatividade e gráficos em HTML.</p>
+                <pre><code>&lt;details&gt;
+    &lt;summary&gt;Clique para expandir&lt;/summary&gt;
+    Aqui está o conteúdo expandido.
+&lt;/details&gt;
+
+&lt;canvas id="meuCanvas"&gt;Seu navegador não suporta o elemento canvas.&lt;/canvas&gt;</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>Clique para expandir</summary>
+                        Aqui está o conteúdo expandido.
+                    </details>
+                    <br>
+                    <canvas id="meuCanvas">Seu navegador não suporta o elemento canvas.</canvas>
+                </div>
+            </article>
+        </section>
+
+        <!-- 8. Acessibilidade -->
+        <section>
+            <h2>8. Acessibilidade</h2>
+            <article>
+                <h3>&lt;img&gt; com atributo alt e atributos aria</h3>
+                <p>O atributo <code>alt</code> em imagens e os atributos <code>aria</code> melhoram a acessibilidade para leitores de tela e outros dispositivos de assistência.</p>
+                <pre><code>&lt;img src="imagem.jpg" alt="Descrição da imagem para leitores de tela"&gt;
+
+&lt;button aria-label="Fechar janela"&gt;X&lt;/button&gt;</code></pre>
+                <div class="result">
+                    <img src="https://via.placeholder.com/150" alt="Imagem Exemplo"><br>
+                    <button aria-label="Fechar janela">X</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- 9. Elementos Sem Fechamento -->
+        <section>
+            <h2>9. Elementos Sem Fechamento</h2>
+            <article>
+                <h3>&lt;br&gt;, &lt;hr&gt;, &lt;img&gt;, &lt;meta&gt;</h3>
+                <p>Essas tags não possuem uma tag de fechamento e são usadas para quebra de linha, linha horizontal, imagens e metadados.</p>
+                <pre><code>&lt;br&gt; <!-- Quebra de linha -->
+&lt;hr&gt; <!-- Linha horizontal -->
+&lt;img src="imagem.jpg" alt="Imagem descritiva"&gt; <!-- Imagem -->
+&lt;meta name="description" content="Descrição da página"&gt; <!-- Metadados --></code></pre>
+                <div class="result no-result">[Exemplo: Quebra de linha e linha horizontal não visíveis aqui]</div>
+            </article>
+        </section>
+
+        <!-- 10. Elementos de Código -->
+        <section>
+            <h2>10. Elementos de Código</h2>
+            <article>
+                <h3>&lt;code&gt; e &lt;pre&gt;</h3>
+                <p>Cria blocos de código e texto pré-formatado.</p>
+                <pre><code>&lt;code&gt;document.write('Hello, World!');&lt;/code&gt;
+&lt;pre&gt;
+    function hello() {
+        console.log('Hello, World!');
+    }
+&lt;/pre&gt;</code></pre>
+                <div class="result">
+                    <code>document.write('Hello, World!');</code>
+                    <pre>
+    function hello() {
+        console.log('Hello, World!');
+    }
+                    </pre>
+                </div>
+            </article>
+        </section>
     </div>
 </body>
 </html>
