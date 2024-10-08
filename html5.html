@@ -64,22 +64,22 @@
             margin-bottom: 10px;
         }
 
-        /* Estilos de Código */
+        /* Estilos de Código (console-like) */
         pre {
-            background-color: #ecf0f1;
+            background-color: #2c3e50;
+            color: #ecf0f1;
             padding: 15px;
             border-radius: 6px;
-            border: 1px solid #bdc3c7;
+            border: 1px solid #34495e;
             overflow-x: auto;
+            font-family: 'Courier New', monospace;
         }
 
         code {
-            background-color: #e3f2fd;
-            padding: 4px 8px;
-            border-radius: 4px;
-            color: #2c3e50;
+            color: #1abc9c;
         }
 
+        /* Estilo para Código dentro de Tabelas */
         .result {
             background-color: #f7f9fb;
             padding: 15px;
@@ -148,17 +148,6 @@
 &lt;title&gt;Guia Completo de Tags HTML&lt;/title&gt;</code></pre>
                 <div class="result no-result">[Título exibido na aba do navegador]</div>
             </article>
-            <article>
-                <h3>&lt;style&gt; e &lt;script&gt;</h3>
-                <p>Define estilos internos e scripts JavaScript, respectivamente.</p>
-                <pre><code>&lt;style&gt;
-    body { font-family: Arial, sans-serif; }
-&lt;/style&gt;
-&lt;script&gt;
-    console.log('Script carregado.');
-&lt;/script&gt;</code></pre>
-                <div class="result no-result">[Estilos e scripts são executados, mas não têm resultado visual direto]</div>
-            </article>
         </section>
 
         <!-- 2. Estruturação de Conteúdo -->
@@ -209,52 +198,46 @@
                     Quebra de linha
                 </div>
             </article>
-            <article>
-                <h3>&lt;blockquote&gt; e &lt;pre&gt;</h3>
-                <p>Estas tags são usadas para citações em bloco e blocos de código pré-formatados.</p>
-                <pre><code>&lt;blockquote&gt;Isto é uma citação.&lt;/blockquote&gt;
-&lt;pre&gt;
-    &lt;code&gt;Código pré-formatado&lt;/code&gt;
-&lt;/pre&gt;</code></pre>
-                <div class="result">
-                    <blockquote>Isto é uma citação.</blockquote>
-                    <pre><code>Código pré-formatado</code></pre>
-                </div>
-            </article>
         </section>
 
-        <!-- 4. Formulários -->
+        <!-- 4. Tipos de Input -->
         <section>
-            <h2>4. Formulários</h2>
+            <h2>4. Tipos de Input</h2>
             <article>
-                <h3>&lt;form&gt;, &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;, &lt;option&gt;, &lt;button&gt;, &lt;label&gt;</h3>
-                <p>Essas tags são usadas para a criação de formulários interativos e envio de dados.</p>
-                <pre><code>&lt;form action="/submit" method="POST"&gt;
-    &lt;label for="nome"&gt;Nome:&lt;/label&gt;
-    &lt;input type="text" id="nome" name="nome"&gt;
+                <h3>&lt;input&gt; - Vários tipos de entrada</h3>
+                <p>Os inputs podem ter vários tipos, como texto, email, senha, número, data, entre outros.</p>
+                <pre><code>&lt;form&gt;
+    &lt;input type="text" placeholder="Digite seu nome"&gt;
     &lt;br&gt;
-    &lt;label for="mensagem"&gt;Mensagem:&lt;/label&gt;
-    &lt;textarea id="mensagem" name="mensagem"&gt;&lt;/textarea&gt;
+    &lt;input type="email" placeholder="Digite seu email"&gt;
     &lt;br&gt;
-    &lt;label for="opcao"&gt;Escolha uma opção:&lt;/label&gt;
-    &lt;select id="opcao" name="opcao"&gt;
-        &lt;option value="1"&gt;Opção 1&lt;/option&gt;
-        &lt;option value="2"&gt;Opção 2&lt;/option&gt;
-    &lt;/select&gt;
+    &lt;input type="password" placeholder="Digite sua senha"&gt;
+    &lt;br&gt;
+    &lt;input type="number" placeholder="Digite sua idade"&gt;
+    &lt;br&gt;
+    &lt;input type="date" placeholder="Selecione uma data"&gt;
+    &lt;br&gt;
+    &lt;input type="checkbox"&gt; Concordo com os termos
+    &lt;br&gt;
+    &lt;input type="radio" name="genero" value="masculino"&gt; Masculino
+    &lt;br&gt;
+    &lt;input type="radio" name="genero" value="feminino"&gt; Feminino
+    &lt;br&gt;
+    &lt;input type="range" min="0" max="100"&gt; Volume
     &lt;br&gt;
     &lt;button type="submit"&gt;Enviar&lt;/button&gt;
 &lt;/form&gt;</code></pre>
                 <div class="result">
-                    <form action="/submit" method="POST">
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome"><br>
-                        <label for="mensagem">Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem"></textarea><br>
-                        <label for="opcao">Escolha uma opção:</label>
-                        <select id="opcao" name="opcao">
-                            <option value="1">Opção 1</option>
-                            <option value="2">Opção 2</option>
-                        </select><br>
+                    <form>
+                        <input type="text" placeholder="Digite seu nome"><br>
+                        <input type="email" placeholder="Digite seu email"><br>
+                        <input type="password" placeholder="Digite sua senha"><br>
+                        <input type="number" placeholder="Digite sua idade"><br>
+                        <input type="date"><br>
+                        <input type="checkbox"> Concordo com os termos<br>
+                        <input type="radio" name="genero" value="masculino"> Masculino<br>
+                        <input type="radio" name="genero" value="feminino"> Feminino<br>
+                        <input type="range" min="0" max="100"> Volume<br>
                         <button type="submit">Enviar</button>
                     </form>
                 </div>
@@ -289,112 +272,8 @@
             </article>
         </section>
 
-        <!-- 6. Elementos Interativos e Gráficos -->
-        <section>
-            <h2>6. Elementos Interativos e Gráficos</h2>
-            <article>
-                <h3>&lt;details&gt;, &lt;summary&gt;, &lt;dialog&gt;, &lt;canvas&gt;, &lt;svg&gt;</h3>
-                <p>Esses elementos permitem interatividade e gráficos em HTML.</p>
-                <pre><code>&lt;details&gt;
-    &lt;summary&gt;Clique para expandir&lt;/summary&gt;
-    Aqui está o conteúdo expandido.
-&lt;/details&gt;
-
-&lt;canvas id="meuCanvas"&gt;Seu navegador não suporta o elemento canvas.&lt;/canvas&gt;</code></pre>
-                <div class="result">
-                    <details>
-                        <summary>Clique para expandir</summary>
-                        Aqui está o conteúdo expandido.
-                    </details>
-                    <br>
-                    <canvas id="meuCanvas">Seu navegador não suporta o elemento canvas.</canvas>
-                </div>
-            </article>
-        </section>
-
-        <!-- 7. Acessibilidade -->
-        <section>
-            <h2>7. Acessibilidade</h2>
-            <article>
-                <h3>&lt;img&gt; com atributo alt e atributos aria</h3>
-                <p>O atributo <code>alt</code> em imagens e os atributos <code>aria</code> melhoram a acessibilidade para leitores de tela e outros dispositivos de assistência.</p>
-                <pre><code>&lt;img src="imagem.jpg" alt="Descrição da imagem para leitores de tela"&gt;
-
-&lt;button aria-label="Fechar janela"&gt;X&lt;/button&gt;</code></pre>
-                <div class="result">
-                    <img src="https://via.placeholder.com/150" alt="Imagem Exemplo"><br>
-                    <button aria-label="Fechar janela">X</button>
-                </div>
-            </article>
-        </section>
-
-        <!-- 8. Tabelas -->
-        <section>
-            <h2>8. Tabelas</h2>
-            <article>
-                <h3>&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</h3>
-                <p>Cria tabelas com linhas (<code>&lt;tr&gt;</code>), cabeçalhos (<code>&lt;th&gt;</code>) e células (<code>&lt;td&gt;</code>).</p>
-                <pre><code>&lt;table&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Cabeçalho 1&lt;/th&gt;
-        &lt;th&gt;Cabeçalho 2&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Celula 1&lt;/td&gt;
-        &lt;td&gt;Celula 2&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;</code></pre>
-                <div class="result">
-                    <table>
-                        <tr>
-                            <th>Cabeçalho 1</th>
-                            <th>Cabeçalho 2</th>
-                        </tr>
-                        <tr>
-                            <td>Celula 1</td>
-                            <td>Celula 2</td>
-                        </tr>
-                    </table>
-                </div>
-            </article>
-        </section>
-
-        <!-- 9. Elementos Sem Fechamento -->
-        <section>
-            <h2>9. Elementos Sem Fechamento</h2>
-            <article>
-                <h3>&lt;br&gt;, &lt;hr&gt;, &lt;img&gt;, &lt;meta&gt;</h3>
-                <p>Essas tags não possuem uma tag de fechamento e são usadas para quebra de linha, linha horizontal, imagens e metadados.</p>
-                <pre><code>&lt;br&gt; <!-- Quebra de linha -->
-&lt;hr&gt; <!-- Linha horizontal -->
-&lt;img src="imagem.jpg" alt="Imagem descritiva"&gt; <!-- Imagem -->
-&lt;meta name="description" content="Descrição da página"&gt; <!-- Metadados --></code></pre>
-                <div class="result no-result">[Exemplo: Quebra de linha e linha horizontal não visíveis aqui]</div>
-            </article>
-        </section>
-
-        <!-- 10. Elementos de Código -->
-        <section>
-            <h2>10. Elementos de Código</h2>
-            <article>
-                <h3>&lt;code&gt; e &lt;pre&gt;</h3>
-                <p>Cria blocos de código e texto pré-formatado.</p>
-                <pre><code>&lt;code&gt;document.write('Hello, World!');&lt;/code&gt;
-&lt;pre&gt;
-    function hello() {
-        console.log('Hello, World!');
-    }
-&lt;/pre&gt;</code></pre>
-                <div class="result">
-                    <code>document.write('Hello, World!');</code>
-                    <pre>
-    function hello() {
-        console.log('Hello, World!');
-    }
-                    </pre>
-                </div>
-            </article>
-        </section>
+        <!-- Outras seções seguem... -->
+        
     </div>
 </body>
 </html>
