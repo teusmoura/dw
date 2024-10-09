@@ -1,0 +1,162 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    color: #2b3752;
+    margin: 0 0 10px;
+    font-weight: 600;
+}
+
+/* Estilos do Header */
+header {
+    background-color: #4c7d96; /* Cor mais suave para o topo */
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 22px;
+}
+
+/* Layout Principal */
+.container {
+    display: flex;
+    margin-top: 80px; /* Ajuste para não cortar o conteúdo */
+    min-height: calc(100vh - 80px); /* Faz o layout ocupar a altura total da tela */
+}
+
+/* Menu Lateral (Aside) */
+aside.menu {
+    width: 240px; /* Largura um pouco mais compacta */
+    background-color: #4c7d96; /* Cor mais suave para o topo */
+    padding: 10px;
+    height: calc(100vh - 80px); /* Altura da tela menos o header */
+    position: fixed; /* Fixado na lateral esquerda */
+    top: 80px; /* Compensa a altura do header */
+    left: 0; /* Fixado na borda esquerda */
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+aside.menu nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside.menu nav ul li {
+    margin-bottom: 12px;
+}
+
+aside.menu nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    background-color: #455a64; /* Cor menos intensa para os links */
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+}
+
+aside.menu nav ul li a:hover {
+    background-color: #78909c;
+    transform: translateX(5px);
+}
+
+/* Área de Conteúdo Principal */
+.content {
+    margin-left: 260px; /* Compensa a largura do aside */
+    padding: 20px;
+    background-color: white;
+    flex-grow: 1;
+    box-shadow: -1px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.content h2 {
+    color: #4a6fa5; /* Usando a mesma cor suave do header */
+    font-size: 28px;
+    margin-top: 0;
+}
+
+.content p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Estilos de Código */
+pre {
+    background-color: #2e2e2e;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #44475a;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    overflow-x: auto;
+}
+
+code {
+    background-color: #2e2e2e;
+    color: #4dd169;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+/* Botão com hover e transição */
+button {
+    background-color: #4a6fa5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2ecc71;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside.menu {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}
+
+/* Footer ou área inferior para links ou branding */
+.menu-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    text-align: center;
+    color: #ccc;
+}
