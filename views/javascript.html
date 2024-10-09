@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de JavaScript para Iniciantes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #34495e;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+
+        code {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guia de JavaScript para Iniciantes</h1>
+        <p>Este guia apresenta os conceitos básicos de JavaScript, incluindo variáveis, funções, eventos e interação com o DOM, para ajudar iniciantes a começar a desenvolver páginas web interativas.</p>
+
+        <!-- O que é JavaScript? -->
+        <section>
+            <h2>1. O que é JavaScript?</h2>
+            <article>
+                <p>JavaScript é uma linguagem de programação usada para adicionar interatividade a páginas web. Diferente de HTML e CSS, que controlam a estrutura e o estilo de uma página, o JavaScript permite que você faça a página "responder" às ações do usuário, como cliques e digitação.</p>
+            </article>
+        </section>
+
+        <!-- Variáveis e Tipos de Dados -->
+        <section>
+            <h2>2. Variáveis e Tipos de Dados</h2>
+            <article>
+                <p>Em JavaScript, variáveis são usadas para armazenar dados, como números e textos. Você pode usar <code>var</code>, <code>let</code> ou <code>const</code> para declarar variáveis, sendo <code>let</code> e <code>const</code> as opções mais modernas.</p>
+
+                <h3>Exemplo de Declaração de Variáveis</h3>
+                <pre><code>// Usando let para criar uma variável que pode mudar
+let idade = 25;
+
+// Usando const para criar uma variável constante
+const nome = "João";</code></pre>
+
+                <h3>Tipos de Dados Comuns</h3>
+                <ul>
+                    <li><code>String</code>: Cadeia de caracteres, como "Olá, mundo!"</li>
+                    <li><code>Number</code>: Números, como 100 ou 3.14</li>
+                    <li><code>Boolean</code>: Verdadeiro ou falso (<code>true</code> ou <code>false</code>)</li>
+                </ul>
+
+                <pre><code>let nome = "Maria"; // String
+let idade = 30; // Number
+let ativo = true; // Boolean</code></pre>
+            </article>
+        </section>
+
+        <!-- Funções -->
+        <section>
+            <h2>3. Funções</h2>
+            <article>
+                <p>Uma função é um bloco de código que pode ser executado sempre que necessário. Elas ajudam a organizar o código e reutilizar lógica sem precisar repetí-la.</p>
+
+                <h3>Exemplo de Função</h3>
+                <pre><code>// Definindo uma função que exibe uma mensagem
+function saudacao() {
+    console.log("Olá, bem-vindo!");
+}
+
+// Chamando a função
+saudacao();</code></pre>
+
+                <p>Funções também podem receber parâmetros e retornar valores.</p>
+
+                <h3>Função com Parâmetros e Retorno</h3>
+                <pre><code>function soma(a, b) {
+    return a + b;
+}
+
+let resultado = soma(5, 10);
+console.log(resultado); // Exibe 15</code></pre>
+            </article>
+        </section>
+
+        <!-- Condicionais -->
+        <section>
+            <h2>4. Condicionais</h2>
+            <article>
+                <p>As condicionais permitem que você execute diferentes blocos de código dependendo de certas condições. A estrutura mais comum é o <code>if</code> e <code>else</code>.</p>
+
+                <h3>Exemplo de Condicional</h3>
+                <pre><code>let idade = 18;
+
+if (idade >= 18) {
+    console.log("Você é maior de idade.");
+} else {
+    console.log("Você é menor de idade.");
+}</code></pre>
+            </article>
+        </section>
+
+        <!-- Loops -->
+        <section>
+            <h2>5. Loops</h2>
+            <article>
+                <p>Os loops permitem que você repita um bloco de código várias vezes. O loop <code>for</code> é o mais comum.</p>
+
+                <h3>Exemplo de Loop</h3>
+                <pre><code>for (let i = 0; i < 5; i++) {
+    console.log("O valor de i é " + i);
+}</code></pre>
+
+                <p>Outro tipo de loop é o <code>while</code>, que continua executando enquanto a condição for verdadeira.</p>
+
+                <h3>Exemplo de Loop While</h3>
+                <pre><code>let i = 0;
+
+while (i < 5) {
+    console.log(i);
+    i++;
+}</code></pre>
+            </article>
+        </section>
+
+        <!-- Interação com o DOM -->
+        <section>
+            <h2>6. Interação com o DOM</h2>
+            <article>
+                <p>O DOM (Document Object Model) é a representação da página web em JavaScript. Com ele, você pode acessar e modificar os elementos da página.</p>
+
+                <h3>Selecionando Elementos</h3>
+                <pre><code>// Seleciona um elemento pelo ID
+let titulo = document.getElementById("titulo");
+
+// Modifica o texto do elemento
+titulo.textContent = "Novo título";</code></pre>
+
+                <p>Você também pode reagir a eventos como cliques, usando JavaScript para fazer a página interativa.</p>
+
+                <h3>Exemplo de Evento de Clique</h3>
+                <pre><code>// Seleciona o botão
+let botao = document.getElementById("meuBotao");
+
+// Adiciona um evento de clique
+botao.addEventListener("click", function() {
+    alert("Botão clicado!");
+});</code></pre>
+            </article>
+        </section>
+
+        <!-- Arrays e Objetos -->
+        <section>
+            <h2>7. Arrays e Objetos</h2>
+            <article>
+                <h3>Arrays</h3>
+                <p>Arrays são listas de valores. Você pode armazenar vários dados em uma única variável.</p>
+
+                <h3>Exemplo de Array</h3>
+                <pre><code>let frutas = ["Maçã", "Banana", "Laranja"];
+console.log(frutas[0]); // Maçã</code></pre>
+
+                <h3>Objetos</h3>
+                <p>Objetos são usados para armazenar dados em pares de chave e valor. Eles são como dicionários.</p>
+
+                <h3>Exemplo de Objeto</h3>
+                <pre><code>let pessoa = {
+    nome: "Carlos",
+    idade: 28,
+    cidade: "São Paulo"
+};
+
+console.log(pessoa.nome); // Carlos</code></pre>
+            </article>
+        </section>
+
+        <!-- Comandos Úteis no JavaScript -->
+        <section>
+            <h2>8. Comandos Úteis no JavaScript</h2>
+            <article>
+                <h3><code>console.log()</code> - Exibir no Console</h3>
+                <p>Usado para exibir mensagens e valores no console do navegador. É muito útil para depuração.</p>
+                <pre><code>console.log("Olá, mundo!");</code></pre>
+
+                <h3><code>setTimeout()</code> - Atrasar Execução</h3>
+                <p>Executa uma função depois de um certo tempo (em milissegundos).</p>
+                <pre><code>setTimeout(function() {
+    console.log("Esta mensagem aparece após 2 segundos.");
+}, 2000);</code></pre>
+
+                <h3><code>setInterval()</code> - Repetir Execução</h3>
+                <p>Executa uma função repetidamente a cada intervalo de tempo.</p>
+                <pre><code>setInterval(function() {
+    console.log("Esta mensagem aparece a cada 1 segundo.");
+}, 1000);</code></pre>
+            </article>
+        </section>
+    </div>
+</body>
+</html>
