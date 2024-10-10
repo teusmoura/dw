@@ -30,6 +30,7 @@ header {
 
 /* Layout Principal */
 .container {
+    padding: 15px 20px;
     display: flex;
     margin-top: 80px; /* Ajuste para não cortar o conteúdo */
     min-height: calc(100vh - 80px); /* Faz o layout ocupar a altura total da tela */
@@ -38,8 +39,8 @@ header {
 /* Menu Lateral (Aside) */
 aside.menu {
     width: 240px; /* Largura um pouco mais compacta */
-    background-color: #4c7d96; /* Cor mais suave para o topo */
-    padding: 10px;
+    background-color: #4c7d96; /* Cor menos intensa */
+    padding: 20px;
     height: calc(100vh - 80px); /* Altura da tela menos o header */
     position: fixed; /* Fixado na lateral esquerda */
     top: 80px; /* Compensa a altura do header */
@@ -76,6 +77,7 @@ aside.menu nav ul li a:hover {
 /* Área de Conteúdo Principal */
 .content {
     margin-left: 260px; /* Compensa a largura do aside */
+    margin-top: 20px;
     padding: 20px;
     background-color: white;
     flex-grow: 1;
@@ -115,6 +117,64 @@ code {
     font-size: 14px;
 }
 
+/* Estilos de Posicionamento (EXEMPLOS) */
+.box {
+    width: 120px;
+    height: 120px;
+    background-color: #4a90e2;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Posicionamento Relativo */
+.relative-box {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    background-color: #ff6f61;
+}
+
+/* Posicionamento Absoluto */
+.absolute-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.absolute-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background-color: #50e3c2;
+}
+
+/* Posicionamento Fixo */
+.fixed-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #7ed321;
+}
+
+/* Posicionamento Sticky */
+.sticky-box {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #bd10e0;
+    padding: 10px;
+    border: 2px solid #ccc;
+}
+
 /* Botão com hover e transição */
 button {
     background-color: #4a6fa5;
@@ -144,10 +204,13 @@ button:hover {
         box-shadow: none;
         padding: 10px;
         margin-left: 0;
+        margin-top: 20px;
     }
 
     .content {
         margin-left: 0;
+        margin-top: 0px;
+        padding: 10px;
     }
 }
 
