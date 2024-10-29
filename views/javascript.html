@@ -15,7 +15,7 @@
     button:hover {
         background-color: #0056b3;
     }
-    #output, #resultadoInteracao {
+    #output, #resultadoInteracao, #elementoManipulado {
         margin: 15px 0;
         padding: 10px;
         background-color: #f1f1f1;
@@ -24,6 +24,9 @@
     .highlight {
         background-color: #d4edda;
         border: 1px solid #c3e6cb;
+    }
+    img {
+        max-width: 100%;
     }
 </style>
 
@@ -35,256 +38,232 @@
 
     <p>Este guia apresenta uma visão completa de JavaScript, cobrindo desde variáveis, funções e condicionais até a interação avançada com o DOM e manipulação de eventos. Prepare-se para criar páginas interativas e dinâmicas com vários exemplos práticos.</p>
 
-    <!-- O que é JavaScript? -->
+    <!-- Elementos Passíveis de Manipulação -->
     <section>
-        <h2>1. O que é JavaScript?</h2>
+        <h2>1. Elementos Passíveis de Manipulação com JavaScript</h2>
         <article>
-            <p>JavaScript é uma linguagem de programação usada para adicionar interatividade a páginas web. Diferente de HTML e CSS, que controlam a estrutura e o estilo de uma página, o JavaScript permite que você faça a página "responder" às ações do usuário, como cliques e digitação.</p>
-        </article>
-    </section>
+            <p>Com JavaScript, você pode manipular quase todos os elementos da página. Abaixo estão alguns dos mais comuns:</p>
 
-    <!-- Variáveis e Tipos de Dados -->
-    <section>
-        <h2>2. Variáveis e Tipos de Dados</h2>
-        <article>
-            <p>Em JavaScript, variáveis são usadas para armazenar dados, como números, textos e valores booleanos. Podemos usar <code>var</code>, <code>let</code> ou <code>const</code> para declarar variáveis.</p>
-
-            <h3>Exemplo de Declaração de Variáveis</h3>
-            <pre><code>let nome = "João"; // String
-const idade = 25; // Number
-let ativo = true; // Boolean</code></pre>
-
-            <h3>Tipos de Dados Comuns</h3>
             <ul>
-                <li><code>String</code>: Cadeias de caracteres, como "Olá, mundo!"</li>
-                <li><code>Number</code>: Números, como 100 ou 3.14</li>
-                <li><code>Boolean</code>: Valores verdadeiros ou falsos (<code>true</code> ou <code>false</code>)</li>
-                <li><code>Array</code>: Lista de valores, como <code>["Maçã", "Banana", "Laranja"]</code></li>
-                <li><code>Object</code>: Coleção de pares chave-valor, como <code>{ nome: "Carlos", idade: 30 }</code></li>
+                <li>**Texto**: Cabeçalhos (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>), parágrafos (<code>&lt;p&gt;</code>), e elementos <code>&lt;span&gt;</code>.</li>
+                <li>**Imagens**: <code>&lt;img&gt;</code>, alterando <code>src</code> ou atributos de estilo.</li>
+                <li>**Botões**: <code>&lt;button&gt;</code>, eventos de clique e mudança de aparência.</li>
+                <li>**Inputs**: Campos de texto, senhas, checkboxes, radio buttons, entre outros.</li>
+                <li>**Listas**: <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code> e suas respectivas <code>&lt;li&gt;</code>.</li>
+                <li>**Divs**: Contêineres gerais com IDs e classes específicas.</li>
+                <li>**Links**: <code>&lt;a&gt;</code>, alterando o <code>href</code> e o comportamento.</li>
             </ul>
         </article>
     </section>
 
-    <!-- Funções -->
+    <!-- Manipulação de Texto -->
     <section>
-        <h2>3. Funções</h2>
+        <h2>2. Manipulação de Texto</h2>
         <article>
-            <p>Funções são blocos de código que podem ser executados sempre que necessário. Elas ajudam a organizar o código e reutilizar lógica sem precisar repetí-la.</p>
+            <p>Podemos manipular texto de cabeçalhos, parágrafos e elementos de texto embutidos como <code>&lt;span&gt;</code>.</p>
+            <h3>Exemplo de Manipulação de Cabeçalhos</h3>
+            <button id="alterarTitulo">Alterar Título</button>
+            <h1 id="tituloPrincipal">Título Original</h1>
 
-            <h3>Exemplo de Função Básica</h3>
-            <pre><code>function saudacao() {
-    console.log("Olá, bem-vindo!");
-}
-
-saudacao();</code></pre>
-
-            <h3>Função com Parâmetros e Retorno</h3>
-            <pre><code>function soma(a, b) {
-    return a + b;
-}
-
-let resultado = soma(10, 20);
-console.log(resultado); // Exibe 30</code></pre>
-        </article>
-    </section>
-
-    <!-- Condicionais -->
-    <section>
-        <h2>4. Condicionais</h2>
-        <article>
-            <p>As condicionais permitem que você execute diferentes blocos de código dependendo de certas condições. A estrutura mais comum é o <code>if</code>, <code>else if</code> e <code>else</code>.</p>
-
-            <h3>Exemplo de Condicional</h3>
-            <pre><code>let idade = 18;
-
-if (idade >= 18) {
-    console.log("Você é maior de idade.");
-} else {
-    console.log("Você é menor de idade.");
-}</code></pre>
-
-            <h3>Condicional com Vários Ramos</h3>
-            <pre><code>let nota = 85;
-
-if (nota >= 90) {
-    console.log("Aprovado com distinção");
-} else if (nota >= 60) {
-    console.log("Aprovado");
-} else {
-    console.log("Reprovado");
-}</code></pre>
-        </article>
-    </section>
-
-    <!-- Loops -->
-    <section>
-        <h2>5. Loops</h2>
-        <article>
-            <p>Loops permitem que você repita um bloco de código várias vezes. O loop <code>for</code> é o mais comum.</p>
-
-            <h3>Exemplo de Loop For</h3>
-            <pre><code>for (let i = 0; i < 5; i++) {
-    console.log("O valor de i é " + i);
-}</code></pre>
-
-            <h3>Exemplo de Loop While</h3>
-            <pre><code>let i = 0;
-
-while (i < 5) {
-    console.log(i);
-    i++;
-}</code></pre>
-        </article>
-    </section>
-
-    <!-- Interação com o DOM -->
-    <section>
-        <h2>6. Interação com o DOM</h2>
-        <article>
-            <p>O DOM (Document Object Model) é a estrutura hierárquica da página web. Com JavaScript, podemos acessar, modificar e manipular elementos do DOM dinamicamente, criando interações avançadas para usuários.</p>
-
-            <h3>Selecionando e Modificando Elementos</h3>
-            <p>Podemos selecionar elementos da página por ID, classe ou tag, e alterar suas propriedades como o texto ou estilos.</p>
-
-            <button id="meuBotao">Clique para Interagir</button>
-            <div id="resultadoInteracao">
-                Este texto será alterado dinamicamente.
-            </div>
-
-            <h3>Exemplo Prático de Seleção e Modificação</h3>
-            <pre><code>// Seleciona o elemento pelo ID
-let elemento = document.getElementById("resultadoInteracao");
-
-// Modifica o conteúdo do elemento ao clicar no botão
-document.getElementById("meuBotao").addEventListener("click", function() {
-    elemento.textContent = "O conteúdo foi modificado!";
-    elemento.classList.add("highlight");
+            <pre><code>// Manipulando o texto de um cabeçalho
+document.getElementById("alterarTitulo").addEventListener("click", function() {
+    let titulo = document.getElementById("tituloPrincipal");
+    titulo.textContent = "Título Modificado com Sucesso!";
 });</code></pre>
 
-            <h3>Adicionar Novos Elementos ao DOM</h3>
-            <p>Além de modificar, você também pode criar novos elementos dinamicamente e adicioná-los à página.</p>
+            <h3>Manipulando Texto de Parágrafos</h3>
+            <p id="meuParagrafo">Este é um parágrafo de exemplo.</p>
+            <button id="alterarParagrafo">Alterar Parágrafo</button>
 
-            <button id="botaoAdicionar">Adicionar Parágrafo</button>
-            <div id="output"></div>
-
-            <pre><code>// Função para adicionar novos elementos
-document.getElementById("botaoAdicionar").addEventListener("click", function() {
-    let novoParagrafo = document.createElement("p");
-    novoParagrafo.textContent = "Este parágrafo foi adicionado dinamicamente!";
-    document.getElementById("output").appendChild(novoParagrafo);
+            <pre><code>// Alterar texto de um parágrafo
+document.getElementById("alterarParagrafo").addEventListener("click", function() {
+    let paragrafo = document.getElementById("meuParagrafo");
+    paragrafo.textContent = "O texto foi alterado dinamicamente!";
 });</code></pre>
         </article>
     </section>
 
-    <!-- Arrays e Objetos -->
+    <!-- Manipulação de Imagens -->
     <section>
-        <h2>7. Arrays e Objetos</h2>
+        <h2>3. Manipulação de Imagens</h2>
         <article>
-            <h3>Arrays</h3>
-            <p>Arrays são usados para armazenar múltiplos valores em uma única variável. Eles são úteis para listas de itens.</p>
+            <p>Podemos alterar a fonte da imagem (<code>src</code>) ou manipular suas propriedades de estilo.</p>
+            <h3>Exemplo de Alteração de Imagem</h3>
+            <img id="minhaImagem" src="https://via.placeholder.com/150" alt="Imagem de exemplo">
+            <button id="alterarImagem">Alterar Imagem</button>
 
-            <h3>Exemplo de Array</h3>
-            <pre><code>let frutas = ["Maçã", "Banana", "Laranja"];
-console.log(frutas[0]); // Exibe "Maçã"</code></pre>
-
-            <h3>Objetos</h3>
-            <p>Objetos são coleções de pares chave-valor que permitem armazenar dados estruturados.</p>
-
-            <h3>Exemplo de Objeto</h3>
-            <pre><code>let pessoa = {
-    nome: "Carlos",
-    idade: 28,
-    cidade: "São Paulo"
-};
-
-console.log(pessoa.nome); // Exibe "Carlos"</code></pre>
-
-            <h3>Exemplo de Manipulação de Arrays e Objetos</h3>
-            <pre><code>// Adicionando e removendo itens de um array
-let carros = ["Fusca", "Gol", "Civic"];
-carros.push("Palio"); // Adiciona um item ao final
-carros.pop(); // Remove o último item
-
-// Acessando propriedades de um objeto
-let aluno = {
-    nome: "Ana",
-    idade: 22,
-    curso: "Engenharia"
-};
-
-aluno.curso = "Medicina"; // Modifica o valor de uma propriedade
-console.log(aluno.curso); // Exibe "Medicina"</code></pre>
-        </article>
-    </section>
-
-    <!-- Comandos Úteis no JavaScript -->
-    <section>
-        <h2>8. Comandos Úteis no JavaScript</h2>
-        <article>
-            <h3><code>console.log()</code> - Exibir no Console</h3>
-            <p>Usado para exibir mensagens e valores no console do navegador. É muito útil para depuração.</p>
-            <pre><code>console.log("Olá, mundo!");</code></pre>
-
-            <h3><code>setTimeout()</code> - Atrasar Execução</h3>
-            <p>Executa uma função depois de um certo tempo (em milissegundos).</p>
-            <pre><code>setTimeout(function() {
-    console.log("Esta mensagem aparece após 2 segundos.");
-}, 2000);</code></pre>
-
-            <h3><code>setInterval()</code> - Repetir Execução</h3>
-            <p>Executa uma função repetidamente a cada intervalo de tempo.</p>
-            <pre><code>setInterval(function() {
-    console.log("Esta mensagem aparece a cada 1 segundo.");
-}, 1000);</code></pre>
-        </article>
-    </section>
-
-    <!-- Eventos e Interatividade -->
-    <section>
-        <h2>9. Eventos e Interatividade</h2>
-        <article>
-            <p>Eventos são ações que ocorrem na página, como cliques, digitação ou rolagem. Podemos usar JavaScript para responder a esses eventos e criar interações.</p>
-
-            <h3>Eventos de Clique</h3>
-            <p>Vamos adicionar um evento de clique a um botão:</p>
-            <button id="meuBotaoEvento">Clique Aqui!</button>
-
-            <pre><code>document.getElementById("meuBotaoEvento").addEventListener("click", function() {
-    alert("Você clicou no botão!");
+            <pre><code>// Alterar a fonte da imagem
+document.getElementById("alterarImagem").addEventListener("click", function() {
+    let imagem = document.getElementById("minhaImagem");
+    imagem.src = "https://via.placeholder.com/300";
 });</code></pre>
 
-            <h3>Eventos de Teclado</h3>
-            <p>Também podemos capturar eventos de teclado para realizar ações específicas.</p>
-            <input type="text" id="campoTexto" placeholder="Digite algo...">
-            <pre><code>document.getElementById("campoTexto").addEventListener("keydown", function(event) {
-    console.log("Você pressionou a tecla: " + event.key);
+            <h3>Alteração de Estilos de Imagem</h3>
+            <button id="alterarEstiloImagem">Alterar Estilo da Imagem</button>
+
+            <pre><code>// Alterar o estilo da imagem
+document.getElementById("alterarEstiloImagem").addEventListener("click", function() {
+    let imagem = document.getElementById("minhaImagem");
+    imagem.style.borderRadius = "50%";
+    imagem.style.boxShadow = "0px 0px 10px #000";
+});</code></pre>
+        </article>
+    </section>
+
+    <!-- Manipulação de Botões -->
+    <section>
+        <h2>4. Manipulação de Botões</h2>
+        <article>
+            <p>Podemos manipular botões adicionando eventos de clique e alterando seu estilo.</p>
+            <h3>Exemplo de Botão com Estilo Dinâmico</h3>
+            <button id="botaoEstilizado">Clique-me</button>
+
+            <pre><code>// Alterar estilo de um botão ao clicar
+document.getElementById("botaoEstilizado").addEventListener("click", function() {
+    let botao = document.getElementById("botaoEstilizado");
+    botao.style.backgroundColor = "#28a745";
+    botao.style.color = "#fff";
+    botao.textContent = "Clicado!";
+});</code></pre>
+        </article>
+    </section>
+
+    <!-- Manipulação de Inputs -->
+    <section>
+        <h2>5. Manipulação de Inputs</h2>
+        <article>
+            <p>Podemos capturar e alterar valores de diferentes tipos de inputs: texto, senha, radio buttons, checkboxes, etc.</p>
+            <h3>Exemplo de Captura de Valores</h3>
+            <label for="meuInput">Digite seu nome:</label>
+            <input type="text" id="meuInput" placeholder="Seu nome">
+            <button id="capturarInput">Capturar Nome</button>
+
+            <pre><code>// Captura o valor de um campo de texto
+document.getElementById("capturarInput").addEventListener("click", function() {
+    let nome = document.getElementById("meuInput").value;
+    alert("Nome digitado: " + nome);
+});</code></pre>
+        </article>
+    </section>
+
+    <!-- Manipulação de Links -->
+    <section>
+        <h2>6. Manipulação de Links</h2>
+        <article>
+            <p>Podemos alterar o destino de um link (<code>href</code>) ou seu texto dinamicamente.</p>
+            <h3>Exemplo de Manipulação de Link</h3>
+            <a id="meuLink" href="https://www.example.com" target="_blank">Visite o Site</a>
+            <button id="alterarLink">Alterar Link</button>
+
+            <pre><code>// Alterar o href e o texto de um link
+document.getElementById("alterarLink").addEventListener("click", function() {
+    let link = document.getElementById("meuLink");
+    link.href = "https://www.google.com";
+    link.textContent = "Visite o Google";
+});</code></pre>
+        </article>
+    </section>
+
+    <!-- Manipulação de Listas -->
+    <section>
+        <h2>7. Manipulação de Listas</h2>
+        <article>
+            <p>Podemos adicionar, remover ou alterar itens em listas não ordenadas (<code>&lt;ul&gt;</code>) ou ordenadas (<code>&lt;ol&gt;</code>).</p>
+            <h3>Exemplo de Adição de Item a uma Lista</h3>
+            <ul id="minhaLista">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            <button id="adicionarItemLista">Adicionar Item à Lista</button>
+
+            <pre><code>// Adiciona um novo item à lista
+document.getElementById("adicionarItemLista").addEventListener("click", function() {
+    let lista = document.getElementById("minhaLista");
+    let novoItem = document.createElement("li");
+    novoItem.textContent = "Novo Item";
+    lista.appendChild(novoItem);
+});</code></pre>
+        </article>
+    </section>
+
+    <!-- Manipulação de Divs -->
+    <section>
+        <h2>8. Manipulação de Divs</h2>
+        <article>
+            <p>Podemos alterar o conteúdo de <code>&lt;div&gt;</code>s ou seus estilos e adicionar novos contêineres à página.</p>
+            <h3>Exemplo de Manipulação de Div</h3>
+            <div id="divPrincipal">Conteúdo Original da Div</div>
+            <button id="alterarDiv">Alterar Conteúdo da Div</button>
+
+            <pre><code>// Alterar o conteúdo de uma div
+document.getElementById("alterarDiv").addEventListener("click", function() {
+    let div = document.getElementById("divPrincipal");
+    div.textContent = "O conteúdo da div foi alterado!";
+    div.classList.add("highlight");
 });</code></pre>
         </article>
     </section>
 </div>
 
 <script>
-    // Manipulação do DOM e Interação com o Botão
-    document.getElementById("meuBotao").addEventListener("click", function() {
-        let elemento = document.getElementById("resultadoInteracao");
-        elemento.textContent = "O conteúdo foi modificado!";
-        elemento.classList.add("highlight");
+    // Manipulação de Título
+    document.getElementById("alterarTitulo").addEventListener("click", function() {
+        let titulo = document.getElementById("tituloPrincipal");
+        titulo.textContent = "Título Modificado com Sucesso!";
     });
 
-    // Adicionando novos elementos dinamicamente
-    document.getElementById("botaoAdicionar").addEventListener("click", function() {
-        let novoParagrafo = document.createElement("p");
-        novoParagrafo.textContent = "Este parágrafo foi adicionado dinamicamente!";
-        document.getElementById("output").appendChild(novoParagrafo);
+    // Manipulação de Parágrafo
+    document.getElementById("alterarParagrafo").addEventListener("click", function() {
+        let paragrafo = document.getElementById("meuParagrafo");
+        paragrafo.textContent = "O texto foi alterado dinamicamente!";
     });
 
-    // Evento de clique
-    document.getElementById("meuBotaoEvento").addEventListener("click", function() {
-        alert("Você clicou no botão!");
+    // Manipulação de Imagem
+    document.getElementById("alterarImagem").addEventListener("click", function() {
+        let imagem = document.getElementById("minhaImagem");
+        imagem.src = "https://via.placeholder.com/300";
     });
 
-    // Evento de teclado
-    document.getElementById("campoTexto").addEventListener("keydown", function(event) {
-        console.log("Você pressionou a tecla: " + event.key);
+    document.getElementById("alterarEstiloImagem").addEventListener("click", function() {
+        let imagem = document.getElementById("minhaImagem");
+        imagem.style.borderRadius = "50%";
+        imagem.style.boxShadow = "0px 0px 10px #000";
+    });
+
+    // Manipulação de Botão
+    document.getElementById("botaoEstilizado").addEventListener("click", function() {
+        let botao = document.getElementById("botaoEstilizado");
+        botao.style.backgroundColor = "#28a745";
+        botao.style.color = "#fff";
+        botao.textContent = "Clicado!";
+    });
+
+    // Manipulação de Input
+    document.getElementById("capturarInput").addEventListener("click", function() {
+        let nome = document.getElementById("meuInput").value;
+        alert("Nome digitado: " + nome);
+    });
+
+    // Manipulação de Link
+    document.getElementById("alterarLink").addEventListener("click", function() {
+        let link = document.getElementById("meuLink");
+        link.href = "https://www.google.com";
+        link.textContent = "Visite o Google";
+    });
+
+    // Manipulação de Lista
+    document.getElementById("adicionarItemLista").addEventListener("click", function() {
+        let lista = document.getElementById("minhaLista");
+        let novoItem = document.createElement("li");
+        novoItem.textContent = "Novo Item";
+        lista.appendChild(novoItem);
+    });
+
+    // Manipulação de Div
+    document.getElementById("alterarDiv").addEventListener("click", function() {
+        let div = document.getElementById("divPrincipal");
+        div.textContent = "O conteúdo da div foi alterado!";
+        div.classList.add("highlight");
     });
 </script>
