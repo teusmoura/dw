@@ -1,3 +1,14 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .resultado {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+    }
+</style>
 <header>
     <h1>Formulários com JavaScript</h1>
 </header>
@@ -195,5 +206,183 @@ console.log("Opção selecionada: " + opcaoSelecionada);</code></pre>
                 <p>Após o envio, você pode limpar os campos do formulário usando o método <code>reset()</code>:</p>
                 <pre><code>document.getElementById("meuFormulario").reset();</code></pre>
             </article>
+
         </section>
+            
+    <!-- Estrutura Básica de um Formulário -->
+    <section>
+        <h2>9. Estrutura Básica de um Formulário</h2>
+        <article>
+            <p>Um formulário HTML básico pode conter vários tipos de elementos, como campos de entrada (<code>&lt;input&gt;</code>), menus suspensos (<code>&lt;select&gt;</code>) e caixas de texto (<code>&lt;textarea&gt;</code>).</p>
+    
+            <h3>Exemplo de Formulário</h3>
+            <pre><code>&lt;form id="meuFormulario" action="/submit-form" method="post"&gt;
+            &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+            &lt;input type="text" id="nome" name="nome" required&gt;
+        
+            &lt;label for="email"&gt;Email:&lt;/label&gt;
+            &lt;input type="email" id="email" name="email" required&gt;
+        
+            &lt;label for="senha"&gt;Senha:&lt;/label&gt;
+            &lt;input type="password" id="senha" name="senha" required&gt;
+        
+            &lt;label for="idade"&gt;Idade:&lt;/label&gt;
+            &lt;input type="number" id="idade" name="idade" min="0" max="120" required&gt;
+        
+            &lt;label for="dataNascimento"&gt;Data de Nascimento:&lt;/label&gt;
+            &lt;input type="date" id="dataNascimento" name="dataNascimento" required&gt;
+        
+            &lt;label for="horaEvento"&gt;Hora do Evento:&lt;/label&gt;
+            &lt;input type="time" id="horaEvento" name="horaEvento" required&gt;
+        
+            &lt;label for="arquivo"&gt;Envie seu documento:&lt;/label&gt;
+            &lt;input type="file" id="arquivo" name="arquivo" accept=".pdf,.doc,.docx" required&gt;
+        
+            &lt;label for="url"&gt;Seu site favorito:&lt;/label&gt;
+            &lt;input type="url" id="url" name="url"&gt;
+        
+            &lt;label for="telefone"&gt;Telefone:&lt;/label&gt;
+            &lt;input type="tel" id="telefone" name="telefone"&gt;
+        
+            &lt;label for="corFavorita"&gt;Escolha sua cor favorita:&lt;/label&gt;
+            &lt;input type="color" id="corFavorita" name="corFavorita"&gt;
+        
+            &lt;label for="mensagem"&gt;Mensagem:&lt;/label&gt;
+            &lt;textarea id="mensagem" name="mensagem"&gt;&lt;/textarea&gt;
+        
+            &lt;label for="aceitoTermos"&gt;Aceito os termos:&lt;/label&gt;
+            &lt;input type="checkbox" id="aceitoTermos" name="termos" required&gt;
+        
+            &lt;label&gt;Gênero:&lt;/label&gt;
+            &lt;label for="masculino"&gt;
+                &lt;input type="radio" id="masculino" name="sexo" value="masculino"&gt; Masculino
+            &lt;/label&gt;
+            &lt;label for="feminino"&gt;
+                &lt;input type="radio" id="feminino" name="sexo" value="feminino"&gt; Feminino
+            &lt;/label&gt;
+        
+            &lt;label for="pais"&gt;País:&lt;/label&gt;
+            &lt;select id="pais" name="pais"&gt;
+                &lt;option value="brasil"&gt;Brasil&lt;/option&gt;
+                &lt;option value="argentina"&gt;Argentina&lt;/option&gt;
+                &lt;option value="eua"&gt;Estados Unidos&lt;/option&gt;
+            &lt;/select&gt;
+        
+            &lt;label for="quantidade"&gt;Quantidade:&lt;/label&gt;
+            &lt;input type="range" id="quantidade" name="quantidade" min="1" max="10"&gt;
+        
+            &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+            &lt;/form&gt;</code></pre>
+    
+            <p>No exemplo acima, temos um formulário completo com diversos tipos de campos, incluindo texto, email, senha, número, data, hora, arquivos, URL, telefone, cor, checkbox, botões de rádio, menus suspensos, áreas de texto e um botão de envio.</p>
+        </article>
+
+    </section>
+       
    
+
+
+
+<!-- Formulário -->
+<section>
+    <h2>Formulário de Teste</h2>
+    <form id="meuFormulario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required><br><br>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" min="0" max="120" required><br><br>
+
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" name="dataNascimento" required><br><br>
+
+        <label for="horaEvento">Hora do Evento:</label>
+        <input type="time" id="horaEvento" name="horaEvento" required><br><br>
+
+        <label for="arquivo">Envie seu documento:</label>
+        <input type="file" id="arquivo" name="arquivo" accept=".pdf,.doc,.docx"><br><br>
+
+        <label for="url">Seu site favorito:</label>
+        <input type="url" id="url" name="url"><br><br>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone"><br><br>
+
+        <label for="corFavorita">Escolha sua cor favorita:</label>
+        <input type="color" id="corFavorita" name="corFavorita"><br><br>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem"></textarea><br><br>
+
+        <label for="aceitoTermos">Aceito os termos:</label>
+        <input type="checkbox" id="aceitoTermos" name="termos" required><br><br>
+
+        <label>Gênero:</label>
+        <label for="masculino">
+            <input type="radio" id="masculino" name="sexo" value="masculino"> Masculino
+        </label>
+        <label for="feminino">
+            <input type="radio" id="feminino" name="sexo" value="feminino"> Feminino
+        </label><br><br>
+
+        <label for="pais">País:</label>
+        <select id="pais" name="pais">
+            <option value="brasil">Brasil</option>
+            <option value="argentina">Argentina</option>
+            <option value="eua">Estados Unidos</option>
+        </select><br><br>
+
+        <label for="quantidade">Quantidade:</label>
+        <input type="range" id="quantidade" name="quantidade" min="1" max="10"><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<!-- Resultado -->
+<section class="resultado" id="resultado">
+    <h2>Resultado do Formulário</h2>
+    <div id="dadosResultado">
+        
+    </div>
+</section>
+
+<script>
+    document.getElementById("meuFormulario").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Captura os valores do formulário
+        const form = event.target;
+        const resultado = document.getElementById("dadosResultado");
+        
+        let genero = form.sexo.value;
+        let termos = form.termos.checked ? "Aceitos" : "Não aceitos";
+
+        // Monta a exibição dos dados
+        resultado.innerHTML = `
+            <ul>
+                <li><strong>Nome:</strong> ${form.nome.value}</li>
+                <li><strong>Email:</strong> ${form.email.value}</li>
+                <li><strong>Senha:</strong> (oculto por segurança)</li>
+                <li><strong>Idade:</strong> ${form.idade.value}</li>
+                <li><strong>Data de Nascimento:</strong> ${form.dataNascimento.value}</li>
+                <li><strong>Hora do Evento:</strong> ${form.horaEvento.value}</li>
+                <li><strong>Arquivo:</strong> ${form.arquivo.value}</li>
+                <li><strong>URL:</strong> ${form.url.value}</li>
+                <li><strong>Telefone:</strong> ${form.telefone.value}</li>
+                <li><strong>Cor Favorita:</strong> ${form.corFavorita.value}</li>
+                <li><strong>Mensagem:</strong> ${form.mensagem.value}</li>
+                <li><strong>Aceito os Termos:</strong> ${termos}</li>
+                <li><strong>Gênero:</strong> ${genero}</li>
+                <li><strong>País:</strong> ${form.pais.value}</li>
+                <li><strong>Quantidade:</strong> ${form.quantidade.value}</li>
+            </ul>
+        `;
+    });
+</script>
